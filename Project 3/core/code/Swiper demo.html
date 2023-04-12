@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--Code by Vladimir Kharlampidi, Vlad Tansky and Tiago Cavalcante https://github.com/nolimits4web/swiper/blob/master/demos/270-mousewheel-control.html-->
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  
+  <title>Project 3</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="swiper-bundle.min.css" />
+
+  <!-- Demo styles created by nolimits4web -->
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body { /*What controls the total body of the site*/
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+    /*What controls the scrolling*/
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+    /* edited on Monday March 28 code by nolimits4web edited by me
+    controls the slide decks*/
+    .swiper-slide {
+      text-align: left;
+      font-size: 18px;
+      background: #14BDEB;
+      display: flex;
+      justify-content: left;
+      align-items: left;
+      padding: 15px;
+    }
+    /* edited on Monday March 28 code by nolimits4web edited by me*/
+    .swiper-slide img { /*Image attributes for the web browser*/
+      display: block;
+      position: relative;
+      width: 400px;
+      height: 200px;
+      bottom:-300px;
+      left: -700px;
+    }
+    .swiper-slide img.Pad { /*Image attributes for the Tablet browser*/
+      display: block;
+      position: relative;
+      width: 250px;
+      height: 300px;
+      bottom:-300px;
+      left: -600px;
+    }
+    .swiper-slide img.Phone { /*Image attributes for the phone browser*/
+      display: block;
+      position: relative;
+      width: 250px;
+      height: 300px;
+      bottom:-300px;
+      left: -480px;
+    }
+    .swiper-slide img.News1 { /*Image attributes for the news article*/
+      display: block;
+      position: relative;
+      width: 400px;
+      height: 250px;
+      top: 250px;
+      left: -190px;
+    }
+    .swiper-slide img.News2 { /*Image attributes for the news article*/
+      display: block;
+      position: relative;
+      width: 400px;
+      height: 250px;
+      top: 250px;
+      left: -120px;
+    }
+    .swiper-slide img.News3 { /*Image attributes for the news article*/
+      display: block;
+      position: relative;
+      width: 400px;
+      height: 250px;
+      top: 250px;
+      left: -70px;
+    }
+    .swiper-slide img.Video1 { /*Image attributes for the video player*/
+      display: block;
+      position: relative;
+      width: 300px;
+      height: 150px;
+      top: 350px;
+      left: -250px;
+    }
+    .swiper-slide img.Video2 { /*Image attributes for the video player*/
+      display: block;
+      position: relative;
+      width: 300px;
+      height: 150px;
+      top: 350px;
+      left: -200px;
+    }
+    .swiper-slide img.Video3 { /*Image attributes for the video player*/
+      display: block;
+      position: relative;
+      width: 300px;
+      height: 150px;
+      top: 350px;
+      left: -150px;
+    }
+    .swiper-slide img.Video4 { /*Image attributes for the video player*/
+      display: block;
+      position: relative;
+      width: 300px;
+      height: 150px;
+      top: 350px;
+      left: -100px;
+    }
+    .swiper-slide img.On { /*Image attributes for the browser Onboarding*/
+      display: block;
+      position: relative;
+      width: 500px;
+      height: 250px;
+      top: 300px;
+      left: -1080px;
+    }
+    /* edited on Thursday March 30 and text attributes for page 1 */
+    div.text{
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 25px;
+      color: #000;
+      align-self:center;
+      position:relative;
+      left:-219px;
+         
+    }
+    div.text2{ /*text attributes for page 2*/
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 25px;
+      color: #000;
+      align-self:center;
+      position:relative;
+      top: -200px;
+    }
+    div.text3{ /*text attributes for page 3*/
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 25px;
+      color: #000;
+      align-self:center;
+      position:relative;
+      top: -200px;
+      right: 0px;
+    }
+    div.text4{ /*text attributes for page 4*/
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 25px;
+      color: #000;
+      text-align: left;
+      align-self: center;
+      position:relative;
+      top: -100px;
+      right: 0px;
+    }
+    div.text5{ /*text attributes for page 5*/
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 25px;
+      color: #000;
+      text-align: left;
+      align-self: center;
+      position:relative;
+      top: -200px;
+      left: -90px;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <!-- Swiper code by nolimits4web edited by me-->
+  
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- edited on Monday March 28 Introduction Slide-->
+      <div class="swiper-slide"><h1>Project 3 computational studio</h1>
+                <div class="text">This project is based on creating a web browser that does not
+                make use of cookies and also has a builtin AdBlocker.
+                </div>     
+      
+      </div>
+      <div class="swiper-slide"><b>Introduction</b>
+      <div class="text2">I began by creating 3 different versions of the browser which were: Desktop, Tablet and Phone.
+        </div>
+        <!--https://www.w3schools.com/css/css_image_gallery.asp - 
+        Images for page 1 showcasing the homepage for each version of the browser.
+        -->    
+          <img src="img/Web Title.png" alt="Web" width="100" height="100">
+          <img src="img/Pad Title.png" class="Pad" alt="Pad" width="100" height="100">
+          <img src="img/Phone Title.png" class="Phone" alt="Phone" width="100" height="100">
+      </div>
+      <!--Pages showcasing news sites used with the AdBlock|https://www.w3schools.com/charsets/ref_utf_arrows.asp-->
+      <div class="swiper-slide">News pages
+        <div class="text3">This would be the process to using the AdBlock on a normal news site.
+        </div>
+        <img src="img/News/2.png" class="News1" alt="News" width="100" height="100">
+        <span style='font-size:50px; position:relative; top: 300px; left: -150px;'>&#8594;</span>
+          <img src="img/News/3.png" class="News2" alt="Pad" width="100" height="100">
+          <span style='font-size:50px; position:relative; top: 300px; right: 100px;'>&#8594;</span>
+          <img src="img/News/4.png" class="News3" alt="Pad" width="100" height="100">
+      </div>
+      <!--Pages showcasing video sites used with the AdBlock-->
+      <div class="swiper-slide">Streaming videos
+        <div class="text4">This would be the process to using the AdBlock on a video streaming site.
+        </div>
+        <!--My images showcasing the video players|https://www.w3schools.com/charsets/ref_utf_arrows.asp-->
+        <img src="img/Video/1.png" class="Video1" alt="News" width="100" height="100">
+        <span style='font-size:50px; position:relative; top: 350px; left: -215px;'>&#8594;</span>
+          <img src="img/Video/2.png" class="Video2" alt="Pad" width="100" height="100">
+          <span style='font-size:50px; position:relative; top: 350px; left: -170px;'>&#8594;</span>
+          <img src="img/Video/3.png" class="Video3" alt="Pad" width="100" height="100">
+          <span style='font-size:50px; position:relative; top: 350px; left: -135px;'>&#8594;</span>
+          <img src="img/Video/4.png" class="Video4" alt="Pad" width="100" height="100">
+      </div>
+      <!--Onboarding tutorial page based on user testing-->
+      <div class="swiper-slide">Onboarding
+      <div class="text5">This is what I created based on User Testing for new users so they know where the tools
+        would be located in the browser.
+      </div>
+      <img src="img/Onboarding.png" class="On" alt="Pad" width="100" height="100">
+      </div>
+      <div class="swiper-slide">Thank You</div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <!-- Swiper JS nolimits4web-->
+  <script src="swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper by nolimits4web -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      direction: "vertical",
+      slidesPerView: 1,
+      spaceBetween: 30,
+      mousewheel: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+</body>
+
+</html>
